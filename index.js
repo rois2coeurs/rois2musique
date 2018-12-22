@@ -1,9 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const cfg = require('./index.json');
 client.music = require("discord.js-musicbot-addon");
-
-client.login(process.env.TOKEN)
 
 client.music.start(client, {
   youtubeKey: "AIzaSyDNIKmrCWsKLqn4ENmJY8JsnDqZ09CHSB8",
@@ -70,4 +67,4 @@ client.on('ready', function () {
     client.user.setActivity("utilisez !help pour voire toutes les commandes")
 });
 
-client.login(cfg.token);
+client.login(process.env.TOKEN);
