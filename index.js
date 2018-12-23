@@ -63,12 +63,6 @@ client.music.start(client, {
   }
 });
 
-client.on('message', msg => {
-  if (msg.content === 'ping') {
-    msg.reply('pong');
-  }
-});
-
 client.on('ready', function () {
     client.user.setActivity("utilisez !help pour voire toutes les commandes")
 });
