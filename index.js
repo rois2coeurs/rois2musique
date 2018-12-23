@@ -63,6 +63,15 @@ client.music.start(client, {
   }
 });
 
+client.on('message', message => {
+  if (message.content === '!ping') {
+    var ping = new Discord.RichEmbed()
+      .addField("Connection actuelle du bot" , `**${message.createdTimestamp - Date.now()} ms**`)
+      .setFooter(`Demandé par ${message.author.username}`)
+    message.channel.sendEmbed(ping)
+  }
+});
+
 client.on('ready', function () {
     client.user.setActivity("utilisez !help pour voire toutes les commandes")
 });
