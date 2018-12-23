@@ -63,6 +63,11 @@ client.music.start(client, {
   }
 });
 
+client.on('message', message => {
+  if(message.content === "news-mp"){
+    g.send("Ceci est un test")
+  }
+
 client.on('ready', function () {
     client.user.setActivity("utilisez !help pour voire toutes les commandes")
 });
