@@ -3,7 +3,7 @@ const client = new Discord.Client();
 client.music = require("discord.js-musicbot-addon");
 
 client.music.start(client, {
-  youtubeKey: "AIzaSyDNIKmrCWsKLqn4ENmJY8JsnDqZ09CHSB8",
+  youtubeKey: process.env.YTTOKEN,
   insertMusic: true,
   botPrefix: "!",
   messageNewSong: true,
