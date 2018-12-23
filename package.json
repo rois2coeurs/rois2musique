@@ -1,12 +1,12 @@
 {
-  "name": "tutorial",
+  "name": "rois2musique",
   "version": "1.0.0",
-  "description": "A tutorial bot for TSC",
+  "description": "Un bot qui fait de la musique",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "ned",
+  "author": "rois2coeurs",
   "license": "ISC",
   "dependencies": {
     "discord.js": "^11.4.2",
