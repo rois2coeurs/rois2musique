@@ -65,6 +65,12 @@ client.music.start(client, {
 
 client.on('message', message => {
   if (message.content === '!ping') {
+    message.channel.sendEmbed(client.guilds.map(r => r.name + " |  **${r.memberCount}** membres"))
+  }
+});
+
+client.on('message', message => {
+  if (message.content === '!serverlist') {
     var ping = new Discord.RichEmbed()
       .addField("Connection actuelle du bot" , `**${message.createdTimestamp - Date.now()} ms**`)
       .setFooter(`Demandé par ${message.author.username}`)
