@@ -65,21 +65,27 @@ client.music.start(client, {
 
 client.on('message', message => {
   if (message.content === '!ping') {
-    message.channel.sendEmbed(client.guilds.map(r => r.name + " |  **${r.memberCount}** membres"))
-  }
-});
-
-client.on('message', message => {
-  if (message.content === '!serverlist') {
     var ping = new Discord.RichEmbed()
-      .addField("Connection actuelle du bot" , `**${message.createdTimestamp - Date.now()} ms**`)
+      .addField(":zap: Connection actuelle du bot :zap: " , `**${message.createdTimestamp - Date.now()} ms**`)
       .setFooter(`Demandé par ${message.author.username}`)
     message.channel.sendEmbed(ping)
   }
 });
 
 client.on('ready', function () {
-    client.user.setActivity("utilisez !help pour voire toutes les commandes")
+    setInterval(intervalle, 10000, 'inter')
+    function intervalle(){
+    client.user.setActivity(`!help |-| ${client.guilds.size} serveurs`)
+    }
+});
+
+client.on('message', message => {
+  if (message.content === '!serverlist') {
+    var serverlist = new Discord.RichEmbed()
+    serverlist.addField(":desktop: Les serveurs du bot", client.guilds.map(r => r.name + ` |  **${r.memberCount}** membres :levitate:`))
+    serverlist.setFooter(`Demandé par ${message.author.username}`);
+    message.channel.sendEmbed(serverlist)
+  }
 });
 
 client.login(process.env.TOKEN);
