@@ -75,7 +75,7 @@ client.on('message', message => {
 client.on('ready', function () {
     setInterval(intervalle, 10000, 'inter')
     function intervalle(){
-    client.user.setActivity(`!help |-| ${client.guilds.size} serveurs`)
+    client.user.setActivity(`!help | ${client.guilds.size} serveurs, ${bot.guilds.membercount} membres`)
     }
 });
 
