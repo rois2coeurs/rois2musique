@@ -67,7 +67,7 @@ client.on('message', message => {
   if (message.content === '!ping') {
     var ping = new Discord.RichEmbed()
       .addField(":zap: Connection actuelle du bot :zap: " , `**${message.createdTimestamp - Date.now()} ms**`)
-      .setFooter(`Demandé par ${message.author.username}`)
+      .setFooter(`Demandé par ${message.author.username}`, message.author.displayAvatarURL)
     message.channel.sendEmbed(ping)
   }
 });
@@ -83,8 +83,20 @@ client.on('message', message => {
   if (message.content === '!serverlist') {
     var serverlist = new Discord.RichEmbed()
     serverlist.addField(":desktop: Les serveurs du bot", client.guilds.map(r => r.name + ` |  **${r.memberCount}** membres :levitate:`))
-    serverlist.setFooter(`Demandé par ${message.author.username}`);
+    serverlist.setFooter(`Demandé par ${message.author.username}`, message.author.displayAvatarURL);
     message.channel.sendEmbed(serverlist)
+  }
+});
+
+client.on('message', message => {
+  if (message.content === '!help') {
+    var help = new Discord.RichEmbed()
+      .addField(":keyboard: Commandes autres :keyboard:" , `Visualise les autres commandes du robot.`)
+      .addField("serverlist" , `Voire, sur quels autres serveurs le robot est connecté.`)
+      .addField("ping" , `Tester la connexion du robot.`)
+      .setColor("#ff3333")
+      .setFooter(`Demandé par ${message.author.username}`, message.author.displayAvatarURL)
+    message.channel.sendEmbed(help)
   }
 });
 
