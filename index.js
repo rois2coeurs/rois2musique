@@ -68,6 +68,7 @@ client.on('message', message => {
     var ping = new Discord.RichEmbed()
       .addField(":zap: Connection actuelle du bot :zap: " , `**${message.createdTimestamp - Date.now()} ms**`)
       .setFooter(`Demandé par ${message.author.username}`, message.author.displayAvatarURL)
+      .setColor("#ffff66")
     message.channel.sendEmbed(ping)
   }
 });
@@ -84,6 +85,7 @@ client.on('message', message => {
     var serverlist = new Discord.RichEmbed()
     serverlist.addField(":desktop: Les serveurs du bot", client.guilds.map(r => r.name + ` |  **${r.memberCount}** membres :levitate:`))
     serverlist.setFooter(`Demandé par ${message.author.username}`, message.author.displayAvatarURL);
+    serverlist.setColor("#33adff")
     message.channel.sendEmbed(serverlist)
   }
 });
