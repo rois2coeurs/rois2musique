@@ -66,9 +66,10 @@ client.music.start(client, {
 client.on('message', message => {
   if (message.content === '!ping') {
     var ping = new Discord.RichEmbed()
-      .addField(":zap: Connection actuelle du bot :zap: " , `**${message.createdTimestamp - Date.now()} ms**`)
+      ping.addField(":zap: Connection actuelle du bot :zap: " , `**${message.createdTimestamp - Date.now()} ms**`)
       .setFooter(`Demandé par ${message.author.username}`, message.author.displayAvatarURL)
       .setColor("#ffff66")
+      .timestamp = new Date()
     message.channel.sendEmbed(ping)
   }
 });
@@ -78,15 +79,15 @@ client.on('ready', function () {
     function intervalle(){
     client.user.setActivity(`!help |-| ${client.guilds.size} serveurs`)
     }
-  client.user.setAvatar('./bot_image.png')
 });
 
 client.on('message', message => {
   if (message.content === '!serverlist') {
     var serverlist = new Discord.RichEmbed()
     serverlist.addField(":desktop: Les serveurs du bot", client.guilds.map(r => r.name + ` |  **${r.memberCount}** membres :levitate:`))
-    serverlist.setFooter(`Demandé par ${message.author.username}`, message.author.displayAvatarURL);
+    serverlist.setFooter(`Demandé par ${message.author.username}`, message.author.displayAvatarURL)
     serverlist.setColor("#33adff")
+    .timestamp = new Date()
     message.channel.sendEmbed(serverlist)
   }
 });
@@ -99,6 +100,7 @@ client.on('message', message => {
       .addField("ping" , `Tester la connexion du robot.`)
       .setColor("#ff3333")
       .setFooter(`Demandé par ${message.author.username}`, message.author.displayAvatarURL)
+      .timestamp = new Date()
     message.channel.sendEmbed(help)
   }
 });
