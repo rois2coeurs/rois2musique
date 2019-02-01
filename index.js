@@ -78,6 +78,7 @@ client.on('ready', function () {
     function intervalle(){
     client.user.setActivity(`!help |-| ${client.guilds.size} serveurs`)
     }
+  client.user.setAvatar('./bot_image.png')
 });
 
 client.on('message', message => {
