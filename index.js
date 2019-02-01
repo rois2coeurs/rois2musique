@@ -67,9 +67,9 @@ client.on('message', message => {
   if (message.content === '!ping') {
     var ping = new Discord.RichEmbed()
       ping.addField(":zap: Connection actuelle du bot :zap: " , `**${message.createdTimestamp - Date.now()} ms**`)
-      .setFooter(`Demandé par ${message.author.username}`, message.author.displayAvatarURL)
-      .setColor("#ffff66")
-      .timestamp = new Date()
+      ping.setFooter(`Demandé par ${message.author.username}`, message.author.displayAvatarURL)
+      ping.setColor("#ffff66")
+      ping.timestamp = new Date()
     message.channel.sendEmbed(ping)
   }
 });
@@ -87,7 +87,7 @@ client.on('message', message => {
     serverlist.addField(":desktop: Les serveurs du bot", client.guilds.map(r => r.name + ` |  **${r.memberCount}** membres :levitate:`))
     serverlist.setFooter(`Demandé par ${message.author.username}`, message.author.displayAvatarURL)
     serverlist.setColor("#33adff")
-    .timestamp = new Date()
+    serverlist.timestamp = new Date()
     message.channel.sendEmbed(serverlist)
   }
 });
@@ -95,12 +95,12 @@ client.on('message', message => {
 client.on('message', message => {
   if (message.content === '!help') {
     var help = new Discord.RichEmbed()
-      .addField(":keyboard: Commandes autres :keyboard:" , `Visualise les autres commandes du robot.`)
-      .addField("serverlist" , `Voire, sur quels autres serveurs le robot est connecté.`)
-      .addField("ping" , `Tester la connexion du robot.`)
-      .setColor("#ff3333")
-      .setFooter(`Demandé par ${message.author.username}`, message.author.displayAvatarURL)
-      .timestamp = new Date()
+      help.addField(":keyboard: Commandes autres :keyboard:" , `Visualise les autres commandes du robot.`)
+      help.addField("serverlist" , `Voire, sur quels autres serveurs le robot est connecté.`)
+      help.addField("ping" , `Tester la connexion du robot.`)
+      help.setColor("#ff3333")
+      help.setFooter(`Demandé par ${message.author.username}`, message.author.displayAvatarURL)
+      help.timestamp = new Date()
     message.channel.sendEmbed(help)
   }
 });
