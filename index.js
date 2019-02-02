@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-client.music = require("discord.js-musicbot-addon");
+client.music = require("./node_modules/discord.js-musicbot-addon/index.js");
 
 client.music.start(client, {
   youtubeKey: process.env.YTTOKEN,
@@ -98,6 +98,7 @@ client.on('message', message => {
       help.addField(":keyboard: Commandes autres :keyboard:" , `Visualise les autres commandes du robot.`)
       help.addField("serverlist" , `Voire, sur quels autres serveurs le robot est connecté.`)
       help.addField("ping" , `Tester la connexion du robot.`)
+      help.addField("Votez pour le bot" , "Vous pouvez voter pour le bot grâce à [ce lien](https://discordbots.org/bot/523803859768967198/vote).")
       help.setColor("#ff3333")
       help.setFooter(`Demandé par ${message.author.username}`, message.author.displayAvatarURL)
       help.timestamp = new Date()
