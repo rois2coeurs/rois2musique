@@ -69,7 +69,7 @@ client.on('message', message => {
       ping.addField(":zap: Connection actuelle du bot :zap: " , `**${message.createdTimestamp - Date.now()} ms**`)
       ping.setFooter(`Demandé par ${message.author.username}`, message.author.displayAvatarURL)
       ping.setColor("#ffff66")
-    message.channel.sendEmbed(ping)
+    message.channel.send(ping)
   }
 });
 
@@ -86,7 +86,7 @@ client.on('message', message => {
     serverlist.addField(":desktop: Les serveurs du bot", client.guilds.map(r => r.name + ` |  **${r.memberCount}** membres :levitate:`))
     serverlist.setFooter(`Demandé par ${message.author.username}`, message.author.displayAvatarURL)
     serverlist.setColor("#33adff")
-    message.channel.sendEmbed(serverlist)
+    message.channel.send(serverlist)
   }
 });
 
@@ -99,7 +99,7 @@ client.on('message', message => {
       help.addField("Votez pour le bot" , "Vous pouvez voter pour le bot grâce à [ce lien](https://discordbots.org/bot/523803859768967198/vote).")
       help.setColor("#ff3333")
       help.setFooter(`Demandé par ${message.author.username}`, message.author.displayAvatarURL)
-    message.channel.sendEmbed(help)
+    message.channel.send(help)
   }
 });
 
