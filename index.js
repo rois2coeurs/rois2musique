@@ -55,9 +55,10 @@ client.music.start(client, {
 
   anyoneCanSkip: false,
 
-  ownerOverMember: true,
-  ownerID: "234647775621414912",
-
+  ownerOverMember: {
+    enable: true,
+    ownerID: "234647775621414912",
+  }
   cooldown: {
     enabled: false
   }
