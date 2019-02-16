@@ -52,13 +52,7 @@ client.music.start(client, {
   np: {
     help: "Affiche la musique en cours de lecture."
   },
-
-  anyoneCanSkip: false,
-
-  ownerOverMember: {
-    enable: true,
-    ownerID: "234647775621414912",
-  }
+  
   cooldown: {
     enabled: false
   }
